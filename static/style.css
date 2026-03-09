@@ -1,0 +1,63 @@
+body{
+font-family: Arial;
+background:#eef2f7;
+text-align:center;
+}
+
+.title{
+margin-top:20px;
+}
+
+.bins{
+display:flex;
+justify-content:center;
+gap:80px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.bin-container{
+position:relative;
+width:260px;
+}
+
+.bin-img{
+width:100%;
+}
+
+/* SCREEN INSIDE BIN */
+
+.screen{
+
+position:absolute;
+
+top:95px;
+left:65px;
+
+width:130px;
+height:80px;
+
+background:black;
+color:#00ff90;
+
+border-radius:8px;
+
+padding:6px;
+
+font-size:11px;
+
+text-align:left;
+
+box-shadow:0px 0px 10px rgba(0,0,0,0.4);
+
+}
+
+.screen h4{
+margin:0;
+text-align:center;
+font-size:12px;
+}
+
+.screen p{
+margin:2px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Smart Waste Monitoring</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1 class="title">Smart Waste Management Dashboard</h1>
+
+<div class="bins">
+
+<!-- BIN 1 -->
+<div class="bin-container">
+
+<img src="{{ url_for('static', filename='dustbin.png') }}" class="bin-img">
+
+<div class="screen">
+
+<h4>BIN 1</h4>
+
+<p>Weight: <span id="bin1">0</span> kg</p>
+<p>Gas: <span id="gas1">0</span></p>
+<p>Level: <span id="level1">0</span> cm</p>
+<p>Type: <span id="type1">Normal</span></p>
+
+</div>
+
+</div>
+
+
+<!-- BIN 2 -->
+<div class="bin-container">
+
+<img src="{{ url_for('static', filename='dustbin.png') }}" class="bin-img">
+
+<div class="screen">
+
+<h4>BIN 2</h4>
+
+<p>Weight: <span id="bin2">0</span> kg</p>
+<p>Gas: <span id="gas2">0</span></p>
+<p>Level: <span id="level2">0</span> cm</p>
+<p>Type: <span id="type2">Normal</span></p>
+
+</div>
+
+</div>
+
+
+<!-- BIN 3 -->
+<div class="bin-container">
+
+<img src="{{ url_for('static', filename='dustbin.png') }}" class="bin-img">
+
+<div class="screen">
+
+<h4>BIN 3</h4>
+
+<p>Weight: <span id="bin3">0</span> kg</p>
+<p>Gas: <span id="gas3">0</span></p>
+<p>Level: <span id="level3">0</span> cm</p>
+<p>Type: <span id="type3">Normal</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+setInterval(function(){
+
+fetch("/data")
+
+.then(res => res.json())
+
+.then(data => {
+
+document.getElementById("bin1").innerHTML = data.bin1
+document.getElementById("bin2").innerHTML = data.bin2
+document.getElementById("bin3").innerHTML = data.bin3
+
+document.getElementById("gas1").innerHTML = data.gas
+document.getElementById("gas2").innerHTML = data.gas
+document.getElementById("gas3").innerHTML = data.gas
+
+document.getElementById("level1").innerHTML = data.level
+document.getElementById("level2").innerHTML = data.level
+document.getElementById("level3").innerHTML = data.level
+
+document.getElementById("type1").innerHTML = data.type
+document.getElementById("type2").innerHTML = data.type
+document.getElementById("type3").innerHTML = data.type
+
+})
+
+},1000)
+
+</script>
+
+</body>
+</html>
